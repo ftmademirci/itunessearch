@@ -92,9 +92,35 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="GMf-gt-O5u"/>
                                 </connections>
                             </collectionView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E3S-LU-1fg">
+                                <rect key="frame" x="107" y="398" width="200" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="not found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PV0-G2-J5H">
+                                        <rect key="frame" x="0.0" y="38" width="200" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="DqH-rt-B1X"/>
+                                    <constraint firstAttribute="trailing" secondItem="PV0-G2-J5H" secondAttribute="trailing" id="JzY-4c-CB7"/>
+                                    <constraint firstItem="PV0-G2-J5H" firstAttribute="centerY" secondItem="E3S-LU-1fg" secondAttribute="centerY" id="NZu-5e-XFo"/>
+                                    <constraint firstAttribute="width" constant="200" id="WVg-YK-mOw"/>
+                                    <constraint firstItem="PV0-G2-J5H" firstAttribute="leading" secondItem="E3S-LU-1fg" secondAttribute="leading" id="lOv-1t-tuM"/>
+                                    <constraint firstItem="PV0-G2-J5H" firstAttribute="centerX" secondItem="E3S-LU-1fg" secondAttribute="centerX" id="yH6-8x-7Tg"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="E3S-LU-1fg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7l2-vB-x31"/>
                             <constraint firstItem="csP-kB-Cme" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Aqb-Q3-WRf"/>
                             <constraint firstItem="npW-V3-QgN" firstAttribute="top" secondItem="0dB-qh-bKD" secondAttribute="bottom" constant="10" id="Cjj-gU-QYG"/>
                             <constraint firstAttribute="bottom" secondItem="HEH-bl-BI7" secondAttribute="bottom" id="Ezk-rF-vVK"/>
@@ -104,6 +130,7 @@
                             <constraint firstItem="0dB-qh-bKD" firstAttribute="top" secondItem="csP-kB-Cme" secondAttribute="bottom" constant="10" id="XCM-A9-i7a"/>
                             <constraint firstItem="HEH-bl-BI7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aF3-c7-gOn"/>
                             <constraint firstItem="HEH-bl-BI7" firstAttribute="top" secondItem="npW-V3-QgN" secondAttribute="bottom" id="bPu-wM-XdT"/>
+                            <constraint firstItem="E3S-LU-1fg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cKK-O5-3hO"/>
                             <constraint firstItem="csP-kB-Cme" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fdd-rT-O6d"/>
                             <constraint firstItem="0dB-qh-bKD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="jxy-d7-ymI"/>
                             <constraint firstItem="npW-V3-QgN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lEa-iu-KkH"/>
@@ -114,6 +141,7 @@
                     <navigationItem key="navigationItem" title="iTunes Search" id="cRp-Tu-N6j"/>
                     <connections>
                         <outlet property="collectionView" destination="HEH-bl-BI7" id="ty3-nT-a4f"/>
+                        <outlet property="notFoundView" destination="E3S-LU-1fg" id="atq-mS-743"/>
                         <outlet property="searchBar" destination="csP-kB-Cme" id="RnD-Qo-apI"/>
                         <outlet property="segmentedControl" destination="0dB-qh-bKD" id="XhX-9K-QtW"/>
                     </connections>
@@ -171,9 +199,6 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxt-WP-GYk">
                                         <rect key="frame" x="0.0" y="95" width="122" height="30"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" button="YES" link="YES"/>
-                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="oPE-JK-ADT"/>
                                         </constraints>

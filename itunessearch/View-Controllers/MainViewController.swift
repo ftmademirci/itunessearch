@@ -14,6 +14,7 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var notFoundView: UIView!
     
     var viewModel = SearchResultViewModel()
     
@@ -52,6 +53,10 @@ class MainViewController: BaseViewController {
     }
     
     func resetData() {
+        self.notFoundView.isHidden = true
+        guard self.viewModel.searchData != nil else {
+            return
+        }
         if var search_data = self.viewModel.searchData!.results {
             search_data.removeAll()
             self.collectionView.reloadData()
@@ -61,12 +66,20 @@ class MainViewController: BaseViewController {
     @objc func search() {
         if let entity = Entity(rawValue: segmentedControl.selectedSegmentIndex) {
             viewModel.search(searchText: self.searchBar.text!, entity: entity, success: {
-                self.collectionView.reloadData()
+                if self.viewModel.numberOfItems() == 0 {
+                    self.notFoundView.isHidden = false
+                    self.collectionView.isHidden = true
+                } else {
+                    self.notFoundView.isHidden = true
+                    self.collectionView.isHidden = false
+                    self.collectionView.reloadData()
+                }
             }) { (error) in
+                self.notFoundView.isHidden = false
+                self.collectionView.isHidden = true
                 
             }
         }
-        
     }
 }
 
@@ -79,10 +92,7 @@ extension MainViewController: UISearchBarDelegate {
         }
 
         guard !(textToSearch.count < 3) else {
-            if (viewModel.searchData?.results != nil) {
-                self.viewModel.searchData!.results!.removeAll()
-                self.collectionView.reloadData()
-            }
+            self.resetData()
             return
         }
 
@@ -93,8 +103,7 @@ extension MainViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.searchBar.setShowsCancelButton(false, animated: true)
         self.definesPresentationContext = true
-        self.viewModel.searchData!.results!.removeAll()
-        self.collectionView.reloadData()
+        self.resetData()
     }
 }
 
