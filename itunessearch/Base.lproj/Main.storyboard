@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,10 +15,108 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="csP-kB-Cme">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="GRW-01-2yf"/>
+                                </connections>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0dB-qh-bKD">
+                                <rect key="frame" x="10" y="154" width="394" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changedSegmentControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="zr0-lu-QAz"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npW-V3-QgN" userLabel="line separator">
+                                <rect key="frame" x="0.0" y="195" width="414" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Mhy-XU-h8r"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HEH-bl-BI7">
+                                <rect key="frame" x="0.0" y="196" width="414" height="700"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xIk-vD-hPJ">
+                                    <size key="itemSize" width="123" height="125"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="iTunesSearchContentCollectionViewCell" id="se4-jm-rAC" customClass="iTunesSearchContentCollectionViewCell" customModule="itunessearch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="123" height="125"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="isj-xn-ZVt">
+                                            <rect key="frame" x="0.0" y="0.0" width="123" height="125"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rNx-Rm-X3U">
+                                                    <rect key="frame" x="0.0" y="0.0" width="123" height="82"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9E3-KW-CYe">
+                                                    <rect key="frame" x="10" y="90" width="103" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="OLi-ds-5HQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="rNx-Rm-X3U" secondAttribute="trailing" id="4YK-Qe-SvB"/>
+                                                <constraint firstAttribute="bottom" secondItem="9E3-KW-CYe" secondAttribute="bottom" id="D3R-2O-gor"/>
+                                                <constraint firstAttribute="trailing" secondItem="9E3-KW-CYe" secondAttribute="trailing" constant="10" id="Isp-Hn-b17"/>
+                                                <constraint firstItem="rNx-Rm-X3U" firstAttribute="top" secondItem="isj-xn-ZVt" secondAttribute="top" id="UkL-w7-smy"/>
+                                                <constraint firstItem="rNx-Rm-X3U" firstAttribute="leading" secondItem="isj-xn-ZVt" secondAttribute="leading" id="Xqq-I1-iNz"/>
+                                                <constraint firstItem="9E3-KW-CYe" firstAttribute="leading" secondItem="isj-xn-ZVt" secondAttribute="leading" constant="10" id="fvI-JF-Eee"/>
+                                                <constraint firstItem="9E3-KW-CYe" firstAttribute="top" secondItem="rNx-Rm-X3U" secondAttribute="bottom" constant="8" id="j0E-jd-txZ"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="123" height="125"/>
+                                        <connections>
+                                            <outlet property="contentImage" destination="rNx-Rm-X3U" id="gHk-Jr-cOg"/>
+                                            <outlet property="contentTitle" destination="9E3-KW-CYe" id="Yiz-Ov-zYR"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="6bF-VF-YVs"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="GMf-gt-O5u"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="csP-kB-Cme" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Aqb-Q3-WRf"/>
+                            <constraint firstItem="npW-V3-QgN" firstAttribute="top" secondItem="0dB-qh-bKD" secondAttribute="bottom" constant="10" id="Cjj-gU-QYG"/>
+                            <constraint firstAttribute="bottom" secondItem="HEH-bl-BI7" secondAttribute="bottom" id="Ezk-rF-vVK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0dB-qh-bKD" secondAttribute="trailing" constant="10" id="F9Q-8e-Ffm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="npW-V3-QgN" secondAttribute="trailing" id="QTg-Xe-Ztk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HEH-bl-BI7" secondAttribute="trailing" id="UdS-44-mw5"/>
+                            <constraint firstItem="0dB-qh-bKD" firstAttribute="top" secondItem="csP-kB-Cme" secondAttribute="bottom" constant="10" id="XCM-A9-i7a"/>
+                            <constraint firstItem="HEH-bl-BI7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aF3-c7-gOn"/>
+                            <constraint firstItem="HEH-bl-BI7" firstAttribute="top" secondItem="npW-V3-QgN" secondAttribute="bottom" id="bPu-wM-XdT"/>
+                            <constraint firstItem="csP-kB-Cme" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fdd-rT-O6d"/>
+                            <constraint firstItem="0dB-qh-bKD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="jxy-d7-ymI"/>
+                            <constraint firstItem="npW-V3-QgN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lEa-iu-KkH"/>
+                            <constraint firstAttribute="trailing" secondItem="csP-kB-Cme" secondAttribute="trailing" id="mkR-5i-cgo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="iTunes Search" id="cRp-Tu-N6j"/>
+                    <connections>
+                        <outlet property="collectionView" destination="HEH-bl-BI7" id="ty3-nT-a4f"/>
+                        <outlet property="searchBar" destination="csP-kB-Cme" id="RnD-Qo-apI"/>
+                        <outlet property="segmentedControl" destination="0dB-qh-bKD" id="XhX-9K-QtW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

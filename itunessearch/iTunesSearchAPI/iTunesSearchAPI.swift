@@ -32,9 +32,8 @@ class iTunesSearchAPI: iTunesSearchServicesProvider {
         
         let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         
-        let url = "\(Constants.apiUrl)?term=\(encodedQuery)&limit=\(Constants.apiPaginationLimit)&entity=\(entity.type)"
-                
-        print(url)
+        let url = "\(Constants.apiUrl)?term=\(encodedQuery)&limit=\(Constants.apiPaginationLimit)&media=\(entity.type)"
+        
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = HTTPMethod.get.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -48,7 +47,6 @@ class iTunesSearchAPI: iTunesSearchServicesProvider {
             switch response.result {
             case .success(let value):
                 let data = JSON(value)
-                print(data)
                 guard let parsedData = Mapper<ResultArray>().map(JSON: data.rawValue as! [String : Any]) else {
                     print("Mapping Error in iTunes Search API!")
                     return

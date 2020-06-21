@@ -27,4 +27,21 @@ enum Entity: Int {
             return "ebook"
         }
     }
+    
+    static func allValues() -> [String] {
+        return [movie, music, software, ebooks].map({$0.description})
+    }
+    
+    public var description: String {
+        switch self {
+        case .movie:
+            return "Movie"
+        case .music:
+            return "Music"
+        case .software:
+            return "Software"
+        case .ebooks:
+            return "Books"
+        }
+    }
 }
