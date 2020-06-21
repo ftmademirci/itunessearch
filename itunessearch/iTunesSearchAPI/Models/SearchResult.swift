@@ -29,6 +29,7 @@ class SearchResult : Mappable {
     var collectionName: String?
     var collectionViewUrl: String?
     var collectionPrice: Double?
+    var currency: String = ""
     var itemPrice: Double?
     var itemGenre: String?
     var kind: String?
@@ -45,6 +46,7 @@ class SearchResult : Mappable {
         collectionName <- map["collectionName"]
         collectionViewUrl <- map["collectionViewUrl"]
         collectionPrice <- map["collectionPrice"]
+        currency <- map["currency"]
         itemPrice <- map["itemPrice"]
         itemGenre <- map["itemGenre"]
         kind <- map["kind"]
