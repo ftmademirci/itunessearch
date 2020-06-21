@@ -26,6 +26,8 @@ class MainViewController: BaseViewController {
                 
         self.setSearchBar()
         self.setSegmentedControl()
+        
+        self.searchBar.becomeFirstResponder()
     }
     
     func setSearchBar() {
@@ -97,9 +99,9 @@ extension MainViewController: UISearchBarDelegate {
 }
 
 extension MainViewController: UICollectionViewDelegate {
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        self.openDetailScreen(movie: (self.viewModel.searchData?.Search![indexPath.row])!)
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.openDetailScreen(self.viewModel.row(indexPath.row))
+    }
 }
 
 extension MainViewController: UICollectionViewDataSource  {

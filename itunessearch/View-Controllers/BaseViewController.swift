@@ -25,5 +25,21 @@ class BaseViewController: UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-
+    
+    func openDetailScreen(_ row: SearchResult) {
+        let detailViewController = UIStoryboard.mainStoryboard.detailViewController
+        detailViewController.row = row
+        self.show(detailViewController, sender: nil)
+    }
+    
+    func formatDate(_ dateString: String, dateFormat: String, dateFormatOutput: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = dateFormat
+        if let date = formatter.date(from: dateString) {
+            formatter.dateFormat = dateFormatOutput
+            return formatter.string(from: date)
+        } else {
+            return ""
+        }
+    }
 }

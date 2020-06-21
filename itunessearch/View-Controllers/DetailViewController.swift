@@ -8,12 +8,27 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: BaseViewController {
 
+    var row: SearchResult!
+    
+    @IBOutlet var artworkImage: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var releaseLabel: UILabel!
+    @IBOutlet var priceLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.artworkImage.sd_setImage(with: URL(string: self.row.artworkUrl100!))
+        self.titleLabel.text = self.row.name
+        self.priceLabel.text = "\(self.row.storePrice) \(self.row.currency)"
+        self.releaseLabel.text = self.formatDate(self.row.releaseDate ?? "", dateFormat: "yyyy-MM-dd'T'HH:mm:ssXXXXX", dateFormatOutput: "yyyy-MM-dd")        
     }
-
+    
+    @IBAction func viewOnITunes(_ sender: Any) {
+        if let url = URL(string: row.storeUrl) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
 }
