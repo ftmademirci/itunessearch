@@ -10,7 +10,6 @@ import XCTest
 @testable import itunessearch
 
 class itunessearchTests: XCTestCase {
-
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -18,17 +17,21 @@ class itunessearchTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    /// test iTunes Search API results
+    func testITunesSearchApiSearch() throws {
+        let expectation = self.expectation(description: "search must be return data array")
+        
+        iTunesSearchAPI().search(query: "The Hateful Eight", entity: .movie) { (response, error) in
+            if let response = response {
+                let resultArray = response.results!
+                let row = resultArray[0]
+                XCTAssertEqual(row.name, "The Hateful Eight")
+                expectation.fulfill()
+            }
         }
+        
+        wait(for: [expectation], timeout: 4.0) // wait for async request
     }
 
 }

@@ -18,6 +18,11 @@
 		0EC90755249F733000F174C5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC90754249F733000F174C5 /* MainViewController.swift */; };
 		0EC90757249F735300F174C5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC90756249F735300F174C5 /* DetailViewController.swift */; };
 		0EC9075A249F73E900F174C5 /* UIStoryboards+UIViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC90759249F73E900F174C5 /* UIStoryboards+UIViewControllers.swift */; };
+		0EC9075D249F7CA900F174C5 /* iTunesSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC9075C249F7CA900F174C5 /* iTunesSearchAPI.swift */; };
+		0EC90761249F80F500F174C5 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC90760249F80F500F174C5 /* Entity.swift */; };
+		0EC90763249F81EC00F174C5 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC90762249F81EC00F174C5 /* SearchResult.swift */; };
+		0EC90765249F8D7900F174C5 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC90764249F8D7900F174C5 /* Spinner.swift */; };
+		0EC90767249F8E4800F174C5 /* ErrorUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC90766249F8E4800F174C5 /* ErrorUtility.swift */; };
 		24981D44CD6FE86D8D2C6033 /* Pods_itunessearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB76D5982A251DBAB76205E /* Pods_itunessearch.framework */; };
 		66618BA40876EB87331790C8 /* Pods_itunessearch_itunessearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FC5E4EDD9C09BC128BE717 /* Pods_itunessearch_itunessearchUITests.framework */; };
 		BC6609C2F6D6A1FFD798699E /* Pods_itunessearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B5B1FE27B6D56C4C75EBCE /* Pods_itunessearchTests.framework */; };
@@ -58,6 +63,11 @@
 		0EC90754249F733000F174C5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0EC90756249F735300F174C5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0EC90759249F73E900F174C5 /* UIStoryboards+UIViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboards+UIViewControllers.swift"; sourceTree = "<group>"; };
+		0EC9075C249F7CA900F174C5 /* iTunesSearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchAPI.swift; sourceTree = "<group>"; };
+		0EC90760249F80F500F174C5 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		0EC90762249F81EC00F174C5 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		0EC90764249F8D7900F174C5 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		0EC90766249F8E4800F174C5 /* ErrorUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorUtility.swift; sourceTree = "<group>"; };
 		230B7BEF70A3D217A3D258B9 /* Pods-itunessearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunessearchTests.release.xcconfig"; path = "Target Support Files/Pods-itunessearchTests/Pods-itunessearchTests.release.xcconfig"; sourceTree = "<group>"; };
 		31FC5E4EDD9C09BC128BE717 /* Pods_itunessearch_itunessearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunessearch_itunessearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8FB3213A59E102B8FCC2E8 /* Pods-itunessearch-itunessearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunessearch-itunessearchUITests.release.xcconfig"; path = "Target Support Files/Pods-itunessearch-itunessearchUITests/Pods-itunessearch-itunessearchUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +132,7 @@
 		0E8B273D249F6FE2004052BA /* itunessearch */ = {
 			isa = PBXGroup;
 			children = (
+				0EC9075B249F7C8E00F174C5 /* iTunesSearchAPI */,
 				0EC90758249F73BA00F174C5 /* Core */,
 				0EC90751249F72DD00F174C5 /* View-Controllers */,
 				0E8B273E249F6FE2004052BA /* AppDelegate.swift */,
@@ -166,8 +177,36 @@
 			isa = PBXGroup;
 			children = (
 				0EC90759249F73E900F174C5 /* UIStoryboards+UIViewControllers.swift */,
+				0EC90764249F8D7900F174C5 /* Spinner.swift */,
+				0EC90766249F8E4800F174C5 /* ErrorUtility.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		0EC9075B249F7C8E00F174C5 /* iTunesSearchAPI */ = {
+			isa = PBXGroup;
+			children = (
+				0EC9075F249F809900F174C5 /* Models */,
+				0EC9075E249F809400F174C5 /* Enums */,
+				0EC9075C249F7CA900F174C5 /* iTunesSearchAPI.swift */,
+			);
+			path = iTunesSearchAPI;
+			sourceTree = "<group>";
+		};
+		0EC9075E249F809400F174C5 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				0EC90760249F80F500F174C5 /* Entity.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		0EC9075F249F809900F174C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0EC90762249F81EC00F174C5 /* SearchResult.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		43B66A35C53BCDDCC8BE44FC /* Frameworks */ = {
@@ -433,11 +472,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EC90753249F730700F174C5 /* BaseViewController.swift in Sources */,
+				0EC90763249F81EC00F174C5 /* SearchResult.swift in Sources */,
+				0EC9075D249F7CA900F174C5 /* iTunesSearchAPI.swift in Sources */,
 				0E8B273F249F6FE2004052BA /* AppDelegate.swift in Sources */,
 				0EC90757249F735300F174C5 /* DetailViewController.swift in Sources */,
+				0EC90761249F80F500F174C5 /* Entity.swift in Sources */,
+				0EC90767249F8E4800F174C5 /* ErrorUtility.swift in Sources */,
 				0EC9075A249F73E900F174C5 /* UIStoryboards+UIViewControllers.swift in Sources */,
 				0E8B2741249F6FE2004052BA /* SceneDelegate.swift in Sources */,
 				0EC90755249F733000F174C5 /* MainViewController.swift in Sources */,
+				0EC90765249F8D7900F174C5 /* Spinner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
