@@ -3,18 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0E8B273F249F6FE2004052BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B273E249F6FE2004052BA /* AppDelegate.swift */; };
 		0E8B2741249F6FE2004052BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B2740249F6FE2004052BA /* SceneDelegate.swift */; };
-		0E8B2743249F6FE2004052BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B2742249F6FE2004052BA /* ViewController.swift */; };
 		0E8B2746249F6FE2004052BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8B2744249F6FE2004052BA /* Main.storyboard */; };
 		0E8B2748249F6FE4004052BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E8B2747249F6FE4004052BA /* Assets.xcassets */; };
 		0E8B274B249F6FE4004052BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8B2749249F6FE4004052BA /* LaunchScreen.storyboard */; };
 		0E8B2756249F6FE5004052BA /* itunessearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B2755249F6FE5004052BA /* itunessearchTests.swift */; };
 		0E8B2761249F6FE5004052BA /* itunessearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B2760249F6FE5004052BA /* itunessearchUITests.swift */; };
+		0EC90753249F730700F174C5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC90752249F730700F174C5 /* BaseViewController.swift */; };
+		0EC90755249F733000F174C5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC90754249F733000F174C5 /* MainViewController.swift */; };
+		0EC90757249F735300F174C5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC90756249F735300F174C5 /* DetailViewController.swift */; };
+		0EC9075A249F73E900F174C5 /* UIStoryboards+UIViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC90759249F73E900F174C5 /* UIStoryboards+UIViewControllers.swift */; };
 		24981D44CD6FE86D8D2C6033 /* Pods_itunessearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB76D5982A251DBAB76205E /* Pods_itunessearch.framework */; };
 		66618BA40876EB87331790C8 /* Pods_itunessearch_itunessearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FC5E4EDD9C09BC128BE717 /* Pods_itunessearch_itunessearchUITests.framework */; };
 		BC6609C2F6D6A1FFD798699E /* Pods_itunessearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B5B1FE27B6D56C4C75EBCE /* Pods_itunessearchTests.framework */; };
@@ -41,7 +44,6 @@
 		0E8B273B249F6FE2004052BA /* itunessearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = itunessearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8B273E249F6FE2004052BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E8B2740249F6FE2004052BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0E8B2742249F6FE2004052BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0E8B2745249F6FE2004052BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E8B2747249F6FE4004052BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E8B274A249F6FE4004052BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +54,10 @@
 		0E8B275C249F6FE5004052BA /* itunessearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = itunessearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8B2760249F6FE5004052BA /* itunessearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itunessearchUITests.swift; sourceTree = "<group>"; };
 		0E8B2762249F6FE5004052BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EC90752249F730700F174C5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0EC90754249F733000F174C5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0EC90756249F735300F174C5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0EC90759249F73E900F174C5 /* UIStoryboards+UIViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboards+UIViewControllers.swift"; sourceTree = "<group>"; };
 		230B7BEF70A3D217A3D258B9 /* Pods-itunessearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunessearchTests.release.xcconfig"; path = "Target Support Files/Pods-itunessearchTests/Pods-itunessearchTests.release.xcconfig"; sourceTree = "<group>"; };
 		31FC5E4EDD9C09BC128BE717 /* Pods_itunessearch_itunessearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunessearch_itunessearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8FB3213A59E102B8FCC2E8 /* Pods-itunessearch-itunessearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunessearch-itunessearchUITests.release.xcconfig"; path = "Target Support Files/Pods-itunessearch-itunessearchUITests/Pods-itunessearch-itunessearchUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,9 +122,10 @@
 		0E8B273D249F6FE2004052BA /* itunessearch */ = {
 			isa = PBXGroup;
 			children = (
+				0EC90758249F73BA00F174C5 /* Core */,
+				0EC90751249F72DD00F174C5 /* View-Controllers */,
 				0E8B273E249F6FE2004052BA /* AppDelegate.swift */,
 				0E8B2740249F6FE2004052BA /* SceneDelegate.swift */,
-				0E8B2742249F6FE2004052BA /* ViewController.swift */,
 				0E8B2744249F6FE2004052BA /* Main.storyboard */,
 				0E8B2747249F6FE4004052BA /* Assets.xcassets */,
 				0E8B2749249F6FE4004052BA /* LaunchScreen.storyboard */,
@@ -145,6 +152,24 @@
 			path = itunessearchUITests;
 			sourceTree = "<group>";
 		};
+		0EC90751249F72DD00F174C5 /* View-Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0EC90752249F730700F174C5 /* BaseViewController.swift */,
+				0EC90754249F733000F174C5 /* MainViewController.swift */,
+				0EC90756249F735300F174C5 /* DetailViewController.swift */,
+			);
+			path = "View-Controllers";
+			sourceTree = "<group>";
+		};
+		0EC90758249F73BA00F174C5 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0EC90759249F73E900F174C5 /* UIStoryboards+UIViewControllers.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		43B66A35C53BCDDCC8BE44FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +190,6 @@
 				FE9AEE3E4AA86492262D8329 /* Pods-itunessearchTests.debug.xcconfig */,
 				230B7BEF70A3D217A3D258B9 /* Pods-itunessearchTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -408,9 +432,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E8B2743249F6FE2004052BA /* ViewController.swift in Sources */,
+				0EC90753249F730700F174C5 /* BaseViewController.swift in Sources */,
 				0E8B273F249F6FE2004052BA /* AppDelegate.swift in Sources */,
+				0EC90757249F735300F174C5 /* DetailViewController.swift in Sources */,
+				0EC9075A249F73E900F174C5 /* UIStoryboards+UIViewControllers.swift in Sources */,
 				0E8B2741249F6FE2004052BA /* SceneDelegate.swift in Sources */,
+				0EC90755249F733000F174C5 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
